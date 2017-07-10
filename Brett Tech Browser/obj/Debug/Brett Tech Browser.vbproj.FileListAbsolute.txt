@@ -1,0 +1,12 @@
+c:\users\administrator\documents\visual studio 2015\Projects\Brett Tech Browser\Brett Tech Browser\bin\Debug\Brett Tech Browser.exe.config
+c:\users\administrator\documents\visual studio 2015\Projects\Brett Tech Browser\Brett Tech Browser\bin\Debug\Brett Tech Browser.exe
+c:\users\administrator\documents\visual studio 2015\Projects\Brett Tech Browser\Brett Tech Browser\bin\Debug\Brett Tech Browser.pdb
+c:\users\administrator\documents\visual studio 2015\Projects\Brett Tech Browser\Brett Tech Browser\bin\Debug\Brett Tech Browser.xml
+c:\users\administrator\documents\visual studio 2015\Projects\Brett Tech Browser\Brett Tech Browser\obj\Debug\Brett Tech Browser.vbprojResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2015\Projects\Brett Tech Browser\Brett Tech Browser\obj\Debug\Brett_Tech_Browser.Form1.resources
+c:\users\administrator\documents\visual studio 2015\Projects\Brett Tech Browser\Brett Tech Browser\obj\Debug\Brett_Tech_Browser.Resources.resources
+c:\users\administrator\documents\visual studio 2015\Projects\Brett Tech Browser\Brett Tech Browser\obj\Debug\Brett Tech Browser.vbproj.GenerateResource.Cache
+c:\users\administrator\documents\visual studio 2015\Projects\Brett Tech Browser\Brett Tech Browser\obj\Debug\Brett Tech Browser.exe
+c:\users\administrator\documents\visual studio 2015\Projects\Brett Tech Browser\Brett Tech Browser\obj\Debug\Brett Tech Browser.xml
+c:\users\administrator\documents\visual studio 2015\Projects\Brett Tech Browser\Brett Tech Browser\obj\Debug\Brett Tech Browser.pdb
+C:\Users\Administrator\documents\visual studio 2015\Projects\Brett Tech Browser\Brett Tech Browser\obj\Debug\Brett_Tech_Browser.Bookmarks.resources
