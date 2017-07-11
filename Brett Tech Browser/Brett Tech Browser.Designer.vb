@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
@@ -44,6 +45,12 @@ Partial Class Form1
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BookmarkToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BookmarksToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CreditsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -78,9 +85,9 @@ Partial Class Form1
         '
         Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox2.Image = Global.Brett_Tech_Browser.My.Resources.Resources.forward
-        Me.PictureBox2.Location = New System.Drawing.Point(42, 6)
+        Me.PictureBox2.Location = New System.Drawing.Point(42, 0)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(31, 25)
+        Me.PictureBox2.Size = New System.Drawing.Size(31, 31)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 4
         Me.PictureBox2.TabStop = False
@@ -89,9 +96,9 @@ Partial Class Form1
         '
         Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox1.Image = Global.Brett_Tech_Browser.My.Resources.Resources.back
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 6)
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(33, 25)
+        Me.PictureBox1.Size = New System.Drawing.Size(33, 31)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
@@ -99,10 +106,11 @@ Partial Class Form1
         'Button2
         '
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.ForeColor = System.Drawing.Color.Lime
-        Me.Button2.Location = New System.Drawing.Point(806, 10)
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.Yellow
+        Me.Button2.Location = New System.Drawing.Point(793, 3)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(61, 26)
+        Me.Button2.Size = New System.Drawing.Size(61, 30)
         Me.Button2.TabIndex = 2
         Me.Button2.Text = "Search"
         Me.Button2.UseVisualStyleBackColor = True
@@ -114,7 +122,7 @@ Partial Class Form1
         Me.MenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem1, Me.BookmarksToolStripMenuItem1, Me.PrintToolStripMenuItem1})
         Me.MenuStrip2.Location = New System.Drawing.Point(922, 12)
         Me.MenuStrip2.Name = "MenuStrip2"
-        Me.MenuStrip2.Size = New System.Drawing.Size(139, 24)
+        Me.MenuStrip2.Size = New System.Drawing.Size(141, 24)
         Me.MenuStrip2.TabIndex = 10
         Me.MenuStrip2.Text = "MenuStrip2"
         '
@@ -125,8 +133,8 @@ Partial Class Form1
         Me.FileToolStripMenuItem1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.FileToolStripMenuItem1.ForeColor = System.Drawing.Color.Lime
         Me.FileToolStripMenuItem1.Name = "FileToolStripMenuItem1"
-        Me.FileToolStripMenuItem1.Size = New System.Drawing.Size(38, 20)
-        Me.FileToolStripMenuItem1.Text = "File"
+        Me.FileToolStripMenuItem1.Size = New System.Drawing.Size(40, 20)
+        Me.FileToolStripMenuItem1.Text = "Edit"
         '
         'FullScreenToolStripMenuItem
         '
@@ -167,19 +175,19 @@ Partial Class Form1
         'PrintToolStripMenuItem
         '
         Me.PrintToolStripMenuItem.Name = "PrintToolStripMenuItem"
-        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
         Me.PrintToolStripMenuItem.Text = "Print"
         '
         'PrintPreviewToolStripMenuItem
         '
         Me.PrintPreviewToolStripMenuItem.Name = "PrintPreviewToolStripMenuItem"
-        Me.PrintPreviewToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.PrintPreviewToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
         Me.PrintPreviewToolStripMenuItem.Text = "Print Preview"
         '
         'PageSetupToolStripMenuItem
         '
         Me.PageSetupToolStripMenuItem.Name = "PageSetupToolStripMenuItem"
-        Me.PageSetupToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.PageSetupToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
         Me.PageSetupToolStripMenuItem.Text = "Page Setup"
         '
         'WebBrowser1
@@ -191,7 +199,7 @@ Partial Class Form1
         Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser1.Name = "WebBrowser1"
         Me.WebBrowser1.ScriptErrorsSuppressed = True
-        Me.WebBrowser1.Size = New System.Drawing.Size(1079, 650)
+        Me.WebBrowser1.Size = New System.Drawing.Size(1079, 573)
         Me.WebBrowser1.TabIndex = 1
         Me.WebBrowser1.Url = New System.Uri("http://www.google.com", System.UriKind.Absolute)
         '
@@ -199,7 +207,7 @@ Partial Class Form1
         '
         Me.MenuStrip1.BackColor = System.Drawing.SystemColors.MenuText
         Me.MenuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
@@ -209,6 +217,7 @@ Partial Class Form1
         '
         'FileToolStripMenuItem
         '
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.FileToolStripMenuItem.ForeColor = System.Drawing.Color.Orange
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
@@ -226,15 +235,66 @@ Partial Class Form1
         '
         'BookmarkToolStripMenuItem
         '
+        Me.BookmarkToolStripMenuItem.BackColor = System.Drawing.Color.Black
+        Me.BookmarkToolStripMenuItem.ForeColor = System.Drawing.Color.Orange
         Me.BookmarkToolStripMenuItem.Name = "BookmarkToolStripMenuItem"
         Me.BookmarkToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.BookmarkToolStripMenuItem.Text = "Bookmark"
         '
         'BookmarksToolStripMenuItem
         '
+        Me.BookmarksToolStripMenuItem.BackColor = System.Drawing.Color.Black
+        Me.BookmarksToolStripMenuItem.ForeColor = System.Drawing.Color.Orange
         Me.BookmarksToolStripMenuItem.Name = "BookmarksToolStripMenuItem"
         Me.BookmarksToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.BookmarksToolStripMenuItem.Text = "Bookmark&s"
+        '
+        'ExitToolStripMenuItem
+        '
+        Me.ExitToolStripMenuItem.BackColor = System.Drawing.Color.Black
+        Me.ExitToolStripMenuItem.ForeColor = System.Drawing.Color.Orange
+        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ExitToolStripMenuItem.Text = "Exit"
+        '
+        'HelpToolStripMenuItem
+        '
+        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CreditsToolStripMenuItem})
+        Me.HelpToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.HelpToolStripMenuItem.ForeColor = System.Drawing.Color.Orange
+        Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
+        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(45, 20)
+        Me.HelpToolStripMenuItem.Text = "Help"
+        '
+        'CreditsToolStripMenuItem
+        '
+        Me.CreditsToolStripMenuItem.BackColor = System.Drawing.Color.Black
+        Me.CreditsToolStripMenuItem.ForeColor = System.Drawing.Color.Orange
+        Me.CreditsToolStripMenuItem.Name = "CreditsToolStripMenuItem"
+        Me.CreditsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CreditsToolStripMenuItem.Text = "Credits"
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Lime
+        Me.Label1.Location = New System.Drawing.Point(972, 636)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(95, 17)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = "00:00:00:00"
+        '
+        'ProgressBar1
+        '
+        Me.ProgressBar1.Location = New System.Drawing.Point(4, 638)
+        Me.ProgressBar1.Name = "ProgressBar1"
+        Me.ProgressBar1.Size = New System.Drawing.Size(318, 14)
+        Me.ProgressBar1.TabIndex = 4
         '
         'Form1
         '
@@ -242,7 +302,9 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(1079, 734)
+        Me.ClientSize = New System.Drawing.Size(1079, 659)
+        Me.Controls.Add(Me.ProgressBar1)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.WebBrowser1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.MenuStrip1)
@@ -286,4 +348,10 @@ Partial Class Form1
     Friend WithEvents PrintToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PrintPreviewToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PageSetupToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CreditsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents Label1 As Label
+    Friend WithEvents ProgressBar1 As ProgressBar
 End Class

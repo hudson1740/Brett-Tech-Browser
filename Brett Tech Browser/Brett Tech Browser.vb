@@ -1,7 +1,10 @@
 ﻿Public Class Form1
     Private Sub WebBrowser1_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser1.DocumentCompleted
 
+
     End Sub
+
+
 
     Private Sub Button1_Click(sender As Object, e As EventArgs)
         WebBrowser1.Refresh()
@@ -67,4 +70,37 @@
     Private Sub FullScreenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FullScreenToolStripMenuItem.Click
         WindowState = FormWindowState.Maximized
     End Sub
+
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        End
+    End Sub
+
+    Private Sub CreditsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CreditsToolStripMenuItem.Click
+        MsgBox("        Created By Brett Hudson
+          Brett Tech Networking
+          Brett-TechRepair.Com", MsgBoxStyle.Information, Title:="Credits")
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Label1.Text = TimeOfDay
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+        Timer1.Start()
+    End Sub
+
+    Private Sub WebBrowser1_Navigating(sender As Object, e As WebBrowserNavigatingEventArgs) Handles WebBrowser1.Navigating
+        ProgressBar1.Visible = True
+        With ProgressBar1
+            .Minimum = 0
+            .Maximum = 50
+            .Step = 5
+        End With
+        For index As Integer = 0 To 50 Step 5
+            ProgressBar1.Value = index
+            System.Threading.Thread.Sleep(35)
+        Next
+    End Sub
+
 End Class
