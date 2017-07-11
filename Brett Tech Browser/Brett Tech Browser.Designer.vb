@@ -38,12 +38,10 @@ Partial Class Form1
         Me.PrintToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.PrintToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PrintPreviewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PageSetupToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BookmarkToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BookmarksToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -51,6 +49,9 @@ Partial Class Form1
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
+        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
+        Me.NormalSizeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -62,7 +63,7 @@ Partial Class Form1
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.Maroon
+        Me.Panel1.BackColor = System.Drawing.Color.Black
         Me.Panel1.Controls.Add(Me.ComboBox1)
         Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Controls.Add(Me.PictureBox1)
@@ -122,14 +123,14 @@ Partial Class Form1
         Me.MenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem1, Me.BookmarksToolStripMenuItem1, Me.PrintToolStripMenuItem1})
         Me.MenuStrip2.Location = New System.Drawing.Point(922, 12)
         Me.MenuStrip2.Name = "MenuStrip2"
-        Me.MenuStrip2.Size = New System.Drawing.Size(141, 24)
+        Me.MenuStrip2.Size = New System.Drawing.Size(233, 24)
         Me.MenuStrip2.TabIndex = 10
         Me.MenuStrip2.Text = "MenuStrip2"
         '
         'FileToolStripMenuItem1
         '
         Me.FileToolStripMenuItem1.BackColor = System.Drawing.Color.Black
-        Me.FileToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FullScreenToolStripMenuItem})
+        Me.FileToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FullScreenToolStripMenuItem, Me.NormalSizeToolStripMenuItem})
         Me.FileToolStripMenuItem1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.FileToolStripMenuItem1.ForeColor = System.Drawing.Color.Lime
         Me.FileToolStripMenuItem1.Name = "FileToolStripMenuItem1"
@@ -138,6 +139,8 @@ Partial Class Form1
         '
         'FullScreenToolStripMenuItem
         '
+        Me.FullScreenToolStripMenuItem.BackColor = System.Drawing.Color.Black
+        Me.FullScreenToolStripMenuItem.ForeColor = System.Drawing.Color.Red
         Me.FullScreenToolStripMenuItem.Name = "FullScreenToolStripMenuItem"
         Me.FullScreenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.FullScreenToolStripMenuItem.Text = "Full Screen"
@@ -153,19 +156,23 @@ Partial Class Form1
         '
         'HistoryToolStripMenuItem
         '
+        Me.HistoryToolStripMenuItem.BackColor = System.Drawing.Color.Black
+        Me.HistoryToolStripMenuItem.ForeColor = System.Drawing.Color.Red
         Me.HistoryToolStripMenuItem.Name = "HistoryToolStripMenuItem"
         Me.HistoryToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.HistoryToolStripMenuItem.Text = "History"
         '
         'BookmarksToolStripMenuItem2
         '
+        Me.BookmarksToolStripMenuItem2.BackColor = System.Drawing.Color.Black
+        Me.BookmarksToolStripMenuItem2.ForeColor = System.Drawing.Color.Red
         Me.BookmarksToolStripMenuItem2.Name = "BookmarksToolStripMenuItem2"
         Me.BookmarksToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
         Me.BookmarksToolStripMenuItem2.Text = "Bookmarks"
         '
         'PrintToolStripMenuItem1
         '
-        Me.PrintToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PrintToolStripMenuItem, Me.PrintPreviewToolStripMenuItem, Me.PageSetupToolStripMenuItem})
+        Me.PrintToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PrintToolStripMenuItem, Me.PrintPreviewToolStripMenuItem})
         Me.PrintToolStripMenuItem1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.PrintToolStripMenuItem1.ForeColor = System.Drawing.Color.Lime
         Me.PrintToolStripMenuItem1.Name = "PrintToolStripMenuItem1"
@@ -174,21 +181,19 @@ Partial Class Form1
         '
         'PrintToolStripMenuItem
         '
+        Me.PrintToolStripMenuItem.BackColor = System.Drawing.Color.Black
+        Me.PrintToolStripMenuItem.ForeColor = System.Drawing.Color.Red
         Me.PrintToolStripMenuItem.Name = "PrintToolStripMenuItem"
-        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
+        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.PrintToolStripMenuItem.Text = "Print"
         '
         'PrintPreviewToolStripMenuItem
         '
+        Me.PrintPreviewToolStripMenuItem.BackColor = System.Drawing.Color.Black
+        Me.PrintPreviewToolStripMenuItem.ForeColor = System.Drawing.Color.Red
         Me.PrintPreviewToolStripMenuItem.Name = "PrintPreviewToolStripMenuItem"
-        Me.PrintPreviewToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
+        Me.PrintPreviewToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.PrintPreviewToolStripMenuItem.Text = "Print Preview"
-        '
-        'PageSetupToolStripMenuItem
-        '
-        Me.PageSetupToolStripMenuItem.Name = "PageSetupToolStripMenuItem"
-        Me.PageSetupToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
-        Me.PageSetupToolStripMenuItem.Text = "Page Setup"
         '
         'WebBrowser1
         '
@@ -219,32 +224,24 @@ Partial Class Form1
         '
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.FileToolStripMenuItem.ForeColor = System.Drawing.Color.Orange
+        Me.FileToolStripMenuItem.ForeColor = System.Drawing.Color.Red
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(38, 20)
         Me.FileToolStripMenuItem.Text = "File"
         '
         'EditToolStripMenuItem
         '
-        Me.EditToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BookmarkToolStripMenuItem, Me.BookmarksToolStripMenuItem})
+        Me.EditToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BookmarksToolStripMenuItem})
         Me.EditToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.EditToolStripMenuItem.ForeColor = System.Drawing.Color.Orange
+        Me.EditToolStripMenuItem.ForeColor = System.Drawing.Color.Red
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
         Me.EditToolStripMenuItem.Size = New System.Drawing.Size(40, 20)
         Me.EditToolStripMenuItem.Text = "Edit"
         '
-        'BookmarkToolStripMenuItem
-        '
-        Me.BookmarkToolStripMenuItem.BackColor = System.Drawing.Color.Black
-        Me.BookmarkToolStripMenuItem.ForeColor = System.Drawing.Color.Orange
-        Me.BookmarkToolStripMenuItem.Name = "BookmarkToolStripMenuItem"
-        Me.BookmarkToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.BookmarkToolStripMenuItem.Text = "Bookmark"
-        '
         'BookmarksToolStripMenuItem
         '
         Me.BookmarksToolStripMenuItem.BackColor = System.Drawing.Color.Black
-        Me.BookmarksToolStripMenuItem.ForeColor = System.Drawing.Color.Orange
+        Me.BookmarksToolStripMenuItem.ForeColor = System.Drawing.Color.Red
         Me.BookmarksToolStripMenuItem.Name = "BookmarksToolStripMenuItem"
         Me.BookmarksToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.BookmarksToolStripMenuItem.Text = "Bookmark&s"
@@ -252,7 +249,7 @@ Partial Class Form1
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.BackColor = System.Drawing.Color.Black
-        Me.ExitToolStripMenuItem.ForeColor = System.Drawing.Color.Orange
+        Me.ExitToolStripMenuItem.ForeColor = System.Drawing.Color.Red
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
         Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
@@ -261,7 +258,7 @@ Partial Class Form1
         '
         Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CreditsToolStripMenuItem})
         Me.HelpToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.HelpToolStripMenuItem.ForeColor = System.Drawing.Color.Orange
+        Me.HelpToolStripMenuItem.ForeColor = System.Drawing.Color.Red
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
         Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(45, 20)
         Me.HelpToolStripMenuItem.Text = "Help"
@@ -269,7 +266,7 @@ Partial Class Form1
         'CreditsToolStripMenuItem
         '
         Me.CreditsToolStripMenuItem.BackColor = System.Drawing.Color.Black
-        Me.CreditsToolStripMenuItem.ForeColor = System.Drawing.Color.Orange
+        Me.CreditsToolStripMenuItem.ForeColor = System.Drawing.Color.Red
         Me.CreditsToolStripMenuItem.Name = "CreditsToolStripMenuItem"
         Me.CreditsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.CreditsToolStripMenuItem.Text = "Credits"
@@ -295,6 +292,24 @@ Partial Class Form1
         Me.ProgressBar1.Name = "ProgressBar1"
         Me.ProgressBar1.Size = New System.Drawing.Size(318, 14)
         Me.ProgressBar1.TabIndex = 4
+        '
+        'PrintPreviewDialog1
+        '
+        Me.PrintPreviewDialog1.AutoScrollMargin = New System.Drawing.Size(0, 0)
+        Me.PrintPreviewDialog1.AutoScrollMinSize = New System.Drawing.Size(0, 0)
+        Me.PrintPreviewDialog1.ClientSize = New System.Drawing.Size(400, 300)
+        Me.PrintPreviewDialog1.Enabled = True
+        Me.PrintPreviewDialog1.Icon = CType(resources.GetObject("PrintPreviewDialog1.Icon"), System.Drawing.Icon)
+        Me.PrintPreviewDialog1.Name = "PrintPreviewDialog1"
+        Me.PrintPreviewDialog1.Visible = False
+        '
+        'NormalSizeToolStripMenuItem
+        '
+        Me.NormalSizeToolStripMenuItem.BackColor = System.Drawing.Color.Black
+        Me.NormalSizeToolStripMenuItem.ForeColor = System.Drawing.Color.Red
+        Me.NormalSizeToolStripMenuItem.Name = "NormalSizeToolStripMenuItem"
+        Me.NormalSizeToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.NormalSizeToolStripMenuItem.Text = "Normal Size"
         '
         'Form1
         '
@@ -336,7 +351,6 @@ Partial Class Form1
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EditToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents BookmarkToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BookmarksToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MenuStrip2 As MenuStrip
     Friend WithEvents FileToolStripMenuItem1 As ToolStripMenuItem
@@ -347,11 +361,13 @@ Partial Class Form1
     Friend WithEvents PrintToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents PrintToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PrintPreviewToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PageSetupToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CreditsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Label1 As Label
     Friend WithEvents ProgressBar1 As ProgressBar
+    Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
+    Friend WithEvents NormalSizeToolStripMenuItem As ToolStripMenuItem
 End Class

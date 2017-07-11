@@ -20,7 +20,7 @@
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         If ListBox1.SelectedItem = False Then
-            MsgBox("error")
+            MsgBox("Please Select & Or Add A Bookmark")
         Else
             Form1.WebBrowser1.Navigate(ListBox1.SelectedItem)
 

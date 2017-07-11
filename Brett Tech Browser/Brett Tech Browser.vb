@@ -53,7 +53,7 @@
         Bookmarks.Visible = True
     End Sub
 
-    Private Sub BookmarkToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BookmarkToolStripMenuItem.Click
+    Private Sub BookmarkToolStripMenuItem_Click(sender As Object, e As EventArgs)
         My.Settings.Bookmarks.Add(WebBrowser1.Url.ToString)
         ComboBox1.Items.Add(WebBrowser1.Url.ToString)
         Bookmarks.ListBox1.Items.Add(WebBrowser1.Url.ToString)
@@ -61,6 +61,7 @@
 
     Private Sub BookmarksToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BookmarksToolStripMenuItem.Click
         Bookmarks.Visible = True
+
     End Sub
 
     Private Sub BookmarksToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles BookmarksToolStripMenuItem2.Click
@@ -69,6 +70,7 @@
 
     Private Sub FullScreenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FullScreenToolStripMenuItem.Click
         WindowState = FormWindowState.Maximized
+
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
@@ -103,4 +105,27 @@
         Next
     End Sub
 
+    Private Sub PrintToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles PrintToolStripMenuItem1.Click
+
+    End Sub
+
+    Private Sub PrintToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrintToolStripMenuItem.Click
+        PrintDocument1.Print()
+    End Sub
+
+    Private Sub PrintPreviewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrintPreviewToolStripMenuItem.Click
+        PrintPreviewDialog1.ShowDialog()
+    End Sub
+
+    Private Sub NormalSizeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NormalSizeToolStripMenuItem.Click
+        WindowState = FormWindowState.Normal
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub HistoryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HistoryToolStripMenuItem.Click
+        MsgBox("This Feature Is Currently Unavalible, No History Is Recorded", MsgBoxStyle.Critical, Title:="Feature Unavalible")
+    End Sub
 End Class
