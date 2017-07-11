@@ -1,5 +1,4 @@
 # Brett-Tech-Browser
-A Simple Browser I was working on
 
 Updated Changes 7-11-17
 -------------------------
