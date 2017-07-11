@@ -19,6 +19,12 @@
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Form1.WebBrowser1.Navigate(ListBox1.SelectedItem)
+        If ListBox1.SelectedItem = False Then
+            MsgBox("error")
+        Else
+            Form1.WebBrowser1.Navigate(ListBox1.SelectedItem)
+
+        End If
+
     End Sub
 End Class
