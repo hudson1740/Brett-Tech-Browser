@@ -10,8 +10,9 @@
         WebBrowser1.Refresh()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
         WebBrowser1.Navigate(ComboBox1.Text)
+        ComboBox1.SelectedItem = WebBrowser1.Url
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs)
@@ -127,5 +128,21 @@
 
     Private Sub HistoryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HistoryToolStripMenuItem.Click
         MsgBox("This Feature Is Currently Unavalible, No History Is Recorded", MsgBoxStyle.Critical, Title:="Feature Unavalible")
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
+
+    Private Sub MenuStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip1.ItemClicked
+
+    End Sub
+
+    Private Sub PictureBox3_Click_1(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        WebBrowser1.Navigate(ComboBox1.Text)
+
+        Label3.Text = "http://" & ComboBox1.Text
+        Label3.Visible = True
+        ComboBox1.SelectedItem = WebBrowser1.Url
     End Sub
 End Class
